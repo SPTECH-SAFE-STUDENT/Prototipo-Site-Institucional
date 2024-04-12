@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+  background-color: #00164f;
+  font-family: 'Poppins', sans-serif; /* Adicionado */
+}
+
+.cadastre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.formcadastre {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 60px 70px;
+  text-align: center;
+  border-radius: 40px;
+margin: 1rem;
+}
+
+h1 {
+  color: #00164f;
+}
+
+h3 {
+  font-size: larger;
+  font-weight: bold;
+  color: #636060;
+}
+
+p {
+  text-align: left;
+  font-size: medium;
+color: #636060;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #252525;
+  padding: 5px; 
+  margin: 5px 0; 
+  width: 100%; 
+  
+}
+
+button {
+  background-color: #ffb800;
+  border-radius: 30px;
+  padding: 15px 40px;
+  border: none;
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #424242;
+  cursor: pointer; /* Adicionado */
+}
+
+
+.logofundo img {
+  max-width: 100%; /* Adicionado */
+  height: auto; /* Adicionado */
+}
