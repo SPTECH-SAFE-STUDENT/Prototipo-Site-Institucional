@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco</title>
+    <link rel="stylesheet" href="styleFaleConosco.css">
+    <!-- <script src="fale_conosco.js"></script> -->
+</head>
+<body>
+
+    <header id="headerResponsivo">
+        <a href="">Logo</a>
+
+        <nav id="navResponsivo">
+
+            <button id="btn-mobile">Menu
+                <span id="hamburger"></span>
+            </button>
+
+            <ul id="menuResponsivo">
+                <li><a href="/"> Inicio </a></li>
+                <li><a href="/"> Sobre </a></li>
+                <li><a href="/"> Funcionamento </a></li>
+                <li><a href="/"> Fale Conosco </a></li>
+                <li><a href="/"> Simulador Financeiro </a></li>
+                <li><a href="/"> Login </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <h1>ENTRE EM CONTATO</h1>
+
+        <span>
+            Está com alguma dúvida ou deseja contratar nossos serviços? <br>
+            Envie uma mensagem agora mesmo e te respoderemos da melhor maneira possível !!
+        </span>
+
+        <div>
+            <p>
+                Nome:
+            </p>
+            <input type="text" id="input_nomeFaleConosco">
+            <br>
+            <p >
+                Email:
+            </p>
+            <input type="text" id="input_emailFaleConosco">
+            <br>
+            <p>
+                Escreva sua mensagem:
+            </p>
+            <input id="input_mensagemFaleConosco"></input>
+            <br>
+
+        </div>
+        <button onclick="enviarMensagem()">
+            Enviar
+        </button>
+
+
+
+        
+    </div>
+
+</body>
+</html>
+
+
+<script>
+
+    function enviarMensagem(){
+
+        const nome = input_nomeFaleConosco.value
+        const email = input_emailFaleConosco.value
+        const mensagem = input_mensagemFaleConosco.value
+
+
+    }
+
+
+    const btnMobile = document.getElementById('btn-mobile');
+
+
+        function toggleMenu(){
+
+        const nav = document.getElementById('navResponsivo');
+
+        // toglle siginfica adicione caso não tenha e remova caso tenha
+        nav.classList.toggle('active');
+
+    
+    }
+
+    btnMobile.addEventListener('click', toggleMenu);
+
+</script>

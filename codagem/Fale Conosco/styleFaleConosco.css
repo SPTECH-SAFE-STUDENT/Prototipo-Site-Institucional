@@ -1,0 +1,260 @@
+
+/* Este é o css referente a todo o Fale Conosco */
+body{
+    background-color: #00164F;
+    margin: 0;
+
+}
+.container{
+    margin-top: 3.5%;
+ 
+  
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+}
+
+.container span{
+    color: white;
+    width: 70vh; 
+
+    margin-top: 0;
+
+    font-size: 17px;
+    
+
+}
+
+.container div{
+    padding: 8px;
+
+
+}
+
+
+
+.container h1{
+    
+    color: #FFB800; 
+
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+
+}
+
+.container p{
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    font-weight: bold;
+    font-size:medium;
+    
+    color: white;
+
+}
+
+.container input{
+    width: 70vh;
+    height: 28px;
+
+    border-radius: 5px;
+
+    background-color: #cfcdcd;
+    opacity: 0.5    ;
+
+}
+
+
+#input_mensagemFaleConosco{
+    display: flex;
+    width: 70vh;
+    height: 20vh;
+    border-radius: 5px;
+
+    background-color: #cfcdcd;
+    opacity: 0.5    ;
+
+}
+
+.container button{
+    margin-top: 10px;
+    background-color: #FFB800;
+    color: #00164F;
+
+    font-weight: bold;
+
+    font-size:medium;
+
+    width: 100px;
+    height: 35px;
+
+    border-radius: 4.5px;
+
+
+}
+
+
+   
+/* Este é o css referente ao menu responsivo */
+
+body ul{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+}
+
+/* Quando passar por cima muda um pouco de cor */
+a:hover{
+    background-color: rgba(0, 0, 0, .05);
+
+}
+
+#logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+#headerResponsivo{
+    background-color: #01206d;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 50px;
+    padding: 1rem;
+
+    /* box-sizing Soma o height com o padding */
+    box-sizing: border-box;
+
+
+}
+
+#menuResponsivo{
+    display: flex;
+    list-style: none;
+    gap: .5rem;
+
+}
+
+#menuResponsivo a{
+    display: block;
+    padding: .5rem;
+
+}
+
+#btn-mobile{
+    display: none;
+}
+
+
+/*  o media query faz com que aquilo só aconteça quando a tela estiver com um determinado tamanho*/
+   
+
+@media (max-width: 600px){
+    #menuResponsivo{
+        display: block;
+        
+        position: absolute;
+
+        
+        width: 100%;
+        height: 0px;
+        top: 70px;
+        right: 0px;
+
+
+        background-color: #01206d;
+        
+        transition: .6s;
+
+        /* faz com que ele fique acima de todos os elementos do site */
+        z-index: 1000;
+
+        /* Ele fica escondido */
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    
+    #navResponsivo.active #menuResponsivo{
+        display: block;
+        /* calc ele vai tirar os 70px do 100vh para não adicionar espaço a mais do que o necessário */
+        height: calc(100vh - 70px);
+        
+        /* Ele reaparece */
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #menuResponsivo a{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    #btn-mobile{
+        color: #FFB800;
+
+        font-size: bold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        display: block;
+        border: none;
+        background: none;
+        
+        cursor: pointer;
+        
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        gap: .5rem;
+
+    }
+
+    #hamburger{
+        border-top: 10px solid;
+        width: 20px;
+        
+
+    }
+
+    #hamburger::after #hamburger::before{
+        content: '';
+
+        display: block;
+        margin-top: 5px;
+
+        width: 20px;
+        height: 2px;
+
+        background-color: currentColor;
+
+    }
+
+    #navResponsivo.active #hamburger{
+        background: #FFB800;
+        border-top-color: transparent;
+    }
+
+    
+}
+
+
+
+
+
+
+
