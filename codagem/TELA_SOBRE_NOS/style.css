@@ -11,48 +11,78 @@ body {
     width: 80%;
     margin: auto;
     display: flex;
-}
-
-.header{
-    background-color: #00164F;
-}
-
-.header .container {
-    justify-content: space-between;
-}
-
-.titulo{
-    color: #FFB800;
-    font-weight: 500;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-}
-
-.navbar {
-    width: 400px;
-    display: flex;
-    color: #ffffff;
-    justify-content: space-between;
-    list-style: none;
+    margin-top: 150px;
     align-items: center;
-    font-family: "Poppins", sans-serif;
 }
 
-.navbar .botao_login {
-    width: 150px;
-    height: 50px;
+header {
+   
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background: #00164F;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    color: #FFFFFF;
+    top: 0;
+    border-bottom: #FFFFFF solid 1px;
+   }
+   
+   header, nav ul {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 16px;
+    list-style: none;
+    
+   }
+
+   
+   
+   .Titulo{
+    font-size: 50px;
+
+   }
+
+   nav ul li {
+    margin-left: 70px;
+   }
+
+   .Navbar{
+    font-size: 16px;
+    width: 100%;
+    display:flex;
+    color: #FFFFFF;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    
+   }
+   
+   .navbar :hover{
     background-color: #FFB800;
-    color: #00164F;
-    border-radius: 5%;
-    font-family: "Poppins", sans-serif; 
-    font-size: medium;
-}
+    color: black;
+   }
+   #LoginNav{
+   list-style: none;
+   border: #FFB800 solid 3px;
+   margin-left: 0px;
+   outline-width: 100px;
+   height: 25px;
+   border-radius: 5px;
+   background-color: #FFB800;
+   color: #00164F;
+   display: inline;
+   padding: 3px 4px;
+  }
 
 .texto {
+    flex: 1;
     width: 100%;
     height: 100%;
-    justify-content: left;
+    text-align: center;
+    padding: 20px;
     color: #424242;
     font-family: "Poppins", sans-serif;
 }
@@ -62,9 +92,11 @@ body {
 }
 
 .imagem {
+    flex: 1;
     width: 100%;
     height: 100%;
-    justify-content: right;
+    text-align: right;
+    padding: 20px;
 }
 
 .texto .safe {
