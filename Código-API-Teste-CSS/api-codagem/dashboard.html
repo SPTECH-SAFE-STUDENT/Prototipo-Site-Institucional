@@ -49,21 +49,22 @@
                     <p>Quantidade de Assentos Ocupados</p>
                 </div>
             </div>
-        </div>
-        <div class="graficos">
-           
-            <div class="canvas">
-                <div>
-                    <h1>Sensor Chave</h1>
-                    <section>
-                        <canvas id="chave" ></canvas>
-                    </section>
-                </div>
-                <div>
-                    <h1>Sensor LM 35 - Temperatura</h1>
-                    <section>
-                        <canvas id="lm35Temperatura" ></canvas>
-                    </section>
+
+            <div class="graficos">
+
+                <div class="canvas">
+                    <div>
+                        <h1>Sensor Chave</h1>
+                        <section>
+                            <canvas id="chave"></canvas>
+                        </section>
+                    </div>
+                    <div>
+                        <h1>Sensor LM 35 - Temperatura</h1>
+                        <section>
+                            <canvas id="lm35Temperatura"></canvas>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,10 +74,10 @@
 </html>
 
 <script>
-  /* -- lm35Temperatura */
-  var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
-    contextoLm35Temperatura.canvas.width = 1000;
-    contextoLm35Temperatura.canvas.height = 300;
+    /* -- lm35Temperatura */
+    var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
+    contextoLm35Temperatura.canvas.width = 650;
+    contextoLm35Temperatura.canvas.height = 400;
     var lm35Temperatura = new Chart(
         contextoLm35Temperatura,
         {
@@ -100,7 +101,7 @@
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            labelString: 'Temperatura'
+                            
                         },
                         ticks: {
                             beginAtZero: true
@@ -115,8 +116,8 @@
     );
     /* -- chave */
     var contextoChave = document.getElementById('chave').getContext('2d');
-    contextoChave.canvas.width = 1000;
-    contextoChave.canvas.height = 300;
+    contextoChave.canvas.width = 650;
+    contextoChave.canvas.height = 400;
     var chave = new Chart(
         contextoChave,
         {
@@ -140,7 +141,6 @@
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            labelString: 'Chave'
                         },
                         ticks: {
                             beginAtZero: true
