@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- TITLE -->
+    <title>SAFE STUDENT - Calculadora financeira</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>SAFE STUDENT</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Ínicio</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Calculadora Financeira</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div class="main">
+            <h2>Calculadora <span>Financeira</span></h2>
+            <p>Qual o valor da mensalidade? </p>
+            <input placeholder="Ex.: 120" type="number" id="input_mensalidade" />
+            <p>Quantas famílias você atende atualmente? </p>
+            <input placeholder="Ex.: 12" autofocus type="number" id="input_qtdFamilia" />
+            <button onclick="calcPerdaLucro()"> CALCULAR </button>
+            <div class="warning">
+                <p id="output"></p>
+            </div>
+        </div>
+
+        <div id="div_output" class="aside">
+
+        </div>
+    </div>
+
+    <script>
+
+        function calcPerdaLucro() {
+
+            // PEGANDO DADOS DO INPUTS ( VALOR MENSALIDADE, QUANTAS FAMILIAS ATENDEM )
+
+            var qtd_familia = input_qtdFamilia.value;
+            var mensalidade = input_mensalidade.value;
+
+            // DECLARANDO VARIÁVEIS PARA CALCULO
+
+            var ex_clientes
+            var perda;
+            var ganhos;
+
+            // CALCULOS
+
+            ex_clientes = (54 / 100) * qtd_familia;
+            perda = (mensalidade * ex_clientes) * 12;
+            ganhos = (mensalidade * qtd_familia) * 12;
+
+
+            // ALTERANDO ESTILO DO DISPLAY DIV_OUTPUT PARA 'BLOCK' 
+
+            div_output.style.display = 'block'
+
+            // IMPRIMINDO RESULTADOS
+
+            output.innerHTML = `
+                Você pode perder até <p style="color: #FFB800; font-size: 40px;"><b>R$${perda.toFixed(2).replace('.', ',')}</b></p>
+            `
+
+            div_output.innerHTML = `
+                <h2 style="color: #FFB800; font-size: 40px;"> POR QUÊ? </h2>
+                <br>Você ganha um total de <b>R$${ganhos.toFixed(2).replace('.', ',')}</b> com <b>${qtd_familia}</b> familias anualmente. <br>
+                <br>De acordo com nossas pesquisas, <b>mais de 53%</b> das famílias optam por retirar 
+                seus filhos do serviço de tranporte escolar, após saberem de algum  
+                esquecimento de crianças dentro do veículo. Sendo assim, se algum acidente  
+                ocorrer dentro da sua van, você pode perder até <b>R$${perda.toFixed(2).replace('.', ',')} anualmente.</b> <br/>
+                
+                <h2 style="color: #FFB800; font-size: 40px;"> Mas </h2>
+
+                Mais de <b>90% </b> das famílias que responderam a pesquisa disseram que pagariam uma <b>mensalidade mais alta</b> caso a van contenha <b>um sistema de segurança a mais</b>.
+        `
+
+        }
+
+    </script>
+</body>
+
+
+</html>
