@@ -27,7 +27,7 @@
         <input id="cpf_ipt" type="text" required />
 
         <p>E-mail</p>
-        <input type="email" required />
+        <input type="email_ipt" required />
 
         <p>Senha</p>
         <input id="senha_ipt" type="password" required>
@@ -156,21 +156,24 @@
     let cpf = cpf_ipt.value
     const senha = senha_ipt.value
     let validador = false
+    let arrobaEmail = email_ipt.indexOf('@')
+    let pontoEmail = email_ipt.indexOf('.')
 
-
-    if (cpf.length != 11 || cpf.length != 14) {
-      alert("O campo cpf deve ser preenchido com 11 ou 14 caracteres")
-    }
-
-    if (senha.length < 8) {
-      alert("A senha deve ter no mínimo 8 caracteres ")
-    }
     for (let contadorSenha = 0; contadorSenha <= 9; contadorSenha++) {
       if (senha.indexOf(contadorSenha) >= 0) { validador = true }
     }
-    if (validador == false) {
+    if (arrobaEmail == -1) {
+      alert("O e-mail deve conter um @")
+    } else if (pontoEmail == -1) {
+      alert("O e-mail deve conter um ponto")
+    } else if (cpf.length != 11 || cpf.length != 14) {
+      alert("O campo cpf deve ser preenchido com 11 ou 14 caracteres")
+    } else if (senha.length < 8) {
+      alert("A senha deve ter no mínimo 8 caracteres ")
+    } else if (validador == false) {
       alert("A senha deve conter números ")
     }
+    
 
 
     quantidadeCadastros++
