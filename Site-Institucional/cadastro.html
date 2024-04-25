@@ -15,7 +15,7 @@
   </div>
   <div class="cadastre">
     <div class="formcadastre">
-      <form action="./login.html">
+      <form>
         <h1>Cadastre-se</h1>
 
         <h3>Insira seus dados nos campos abaixo</h3>
@@ -35,8 +35,14 @@
         <p style="margin-top: 5vh; font-size: large; text-align: center;">Já tem cadastro? <a href="./login.html"
             style="color: #FFB800; text-decoration: none;">Entre aqui</a></p>
 
-        <button>Cadastrar</button>
+        <button onclick="MensagemFor()">Cadastrar</button>
       </form>
+    </div>
+
+
+    <div id="div_mensagemFor"
+      style="background-color: #FFFFFF; border-radius: 25px; width: 350px; height: 15px; text-align: center;  padding-top: 30px; padding-bottom: 100px; display: none; position: fixed; top: 110px; left: 670px">
+
     </div>
 
     <div class="cadastro_IMG">
@@ -138,3 +144,41 @@
 </body>
 
 </html>
+
+<script>
+
+  let quantidadeCadastros = 0
+
+  function MensagemFor() {
+
+
+    let validador = false
+    let cpf = cpf_ipt.value
+    const senha = senha_ipt.value
+
+    if (cpf.length != 11 || cpf.length != 14) {
+      alert("O campo cpf deve ser preenchido com 11 ou 14 caracteres")
+    }
+
+    if (senha.length < 8) {
+      alert("A senha deve ter no mínimo 8 caracteres ")
+    }
+    for (let contadorSenha = 0; contadorSenha <= 9; contadorSenha++) {
+      if (senha.indexOf(contadorSenha) >= 0) { validador = true }
+    }
+    if (validador == false) {
+      alert("A senha deve conter números ")
+    }
+
+
+    quantidadeCadastros++
+
+    for (let contador = 0; contador <= quantidadeCadastros; contador++) {
+
+      div_mensagemFor.style.display = "block";
+      div_mensagemFor.innerHTML = (`Parabéns! Você é nosso usuário N° ${contador} cadastrado, aguarde um momento que você será redirecionado para pagina de Login...`)
+
+    }
+  }
+
+</script>
