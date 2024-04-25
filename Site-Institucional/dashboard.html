@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/dashboard.css">
     <title>Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,27 +37,126 @@
         <div class="visao_dash">
             <div class="kpis">
                 <div id="1">
-                    <p>a</p>
+                    <p>Média Temperatura do Dia</p>
                 </div>
                 <div id="2">
-                    <p>b</p>
+                    <p>Média Temperatura da Semana</p>
                 </div>
                 <div id="3">
-                    <p>c</p>
+                    <p>Temperatura mais alta</p>
                 </div>
                 <div id="4">
-                    <p>d</p>
+                    <p>Quantidade de Assentos Ocupados</p>
                 </div>
             </div>
-        </div>
-        <div class="graficos">
-           
-            <div class="canvas">
-                <div></div>
-                <div></div>
+
+            <div class="graficos">
+
+                <div class="canvas">
+                    <div>
+                        <h1>Sensor Chave</h1>
+                        <section>
+                            <canvas id="chave"></canvas>
+                        </section>
+                    </div>
+                    <div>
+                        <h1>Sensor LM 35 - Temperatura</h1>
+                        <section>
+                            <canvas id="lm35Temperatura"></canvas>
+                        </section>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+    /* -- lm35Temperatura */
+    var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
+    contextoLm35Temperatura.canvas.width = 650;
+    contextoLm35Temperatura.canvas.height = 400;
+    var lm35Temperatura = new Chart(
+        contextoLm35Temperatura,
+        {
+            type: 'line',
+            data: {
+                label: 'Temperatura',
+                labels: ['Sensor 1', 'Sensor 2',],
+                datasets: [{
+                    type: 'line',
+                    borderColor: ['##FFB800'],
+                    backgroundColor: ['##FFB800'],
+                    data: [30, 32, 31, 30, 31.5, 29.5]
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+    /* -- chave */
+    var contextoChave = document.getElementById('chave').getContext('2d');
+    contextoChave.canvas.width = 650;
+    contextoChave.canvas.height = 400;
+    var chave = new Chart(
+        contextoChave,
+        {
+            type: 'bar',
+            data: {
+                label: 'Chave',
+                labels: ['Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4', 'Sensor 5', 'Sensor 6', 'Sensor 7'],
+                datasets: [{
+                    type: 'bar',
+                    borderColor: ['#FFB800'],
+                    backgroundColor: ['#FFB800'],
+                    data: [1, 0, 1, 1, 1, 0, 0],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+
+</script>
