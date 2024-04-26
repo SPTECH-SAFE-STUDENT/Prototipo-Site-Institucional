@@ -83,13 +83,14 @@
         {
             type: 'line',
             data: {
-                label: 'Temperatura',
-                labels: ['Sensor 1', 'Sensor 2',],
+                labels: ['Leitura 1', 'Leitura 2', 'Leitura 3', 'Leitura 4', 'Leitura 5', 'Leitura 6'],
                 datasets: [{
+                    label: 'Sensor 1',
                     type: 'line',
-                    borderColor: ['##FFB800'],
-                    backgroundColor: ['##FFB800'],
-                    data: [30, 32, 31, 30, 31.5, 29.5]
+                    borderColor: ['#FFB800'],
+                    backgroundColor: ['#FFB800'],
+                    data: [30, 32, 31, 30, 31.5, 29.5],
+                    fill: false
                 }]
             },
             options: {
@@ -125,9 +126,9 @@
         {
             type: 'bar',
             data: {
-                label: 'Chave',
-                labels: ['Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4', 'Sensor 5', 'Sensor 6', 'Sensor 7'],
+                labels: ['Lugar 1', 'Lugar 2', 'Lugar 3', 'Lugar 4', 'Lugar 5', 'Lugar 6', 'Lugar 7'],
                 datasets: [{
+                    label: 'Lugares Ocupados',
                     type: 'bar',
                     borderColor: ['#FFB800'],
                     backgroundColor: ['#FFB800'],
