@@ -37,16 +37,20 @@
         <div class="visao_dash">
             <div class="kpis">
                 <div id="1">
-                    <p>Média Temperatura do Dia</p>
-                </div>
-                <div id="2">
-                    <p>Média Temperatura da Semana</p>
+                    <p>Temperatura Mínima do dia</p>
+                    <span>18°C</span>
                 </div>
                 <div id="3">
-                    <p>Temperatura mais alta</p>
+                    <p>Temperatura máxima do dia </p>
+                    <span>29°C</span>
+                </div>
+                <div id="2">
+                    <p>Temperatura Média da semana</p>
+                    <span>30°C</span>
                 </div>
                 <div id="4">
-                    <p>Quantidade de Assentos Ocupados</p>
+                    <p>Bancos Ocupados</p><br>
+                    <span>8</span>
                 </div>
             </div>
 
@@ -54,13 +58,13 @@
 
                 <div class="canvas">
                     <div>
-                        <h1>Sensor Chave</h1>
+                        <h2>Bancos</h2>
                         <section>
                             <canvas id="chave"></canvas>
                         </section>
                     </div>
                     <div>
-                        <h1>Sensor LM 35 - Temperatura</h1>
+                        <h2>Temperatura</h2>
                         <section>
                             <canvas id="lm35Temperatura"></canvas>
                         </section>
@@ -85,9 +89,9 @@
             data: {
                 datasets: [{
                     label: 'Temperatura',
+                    data: [18, 20, 25, 29, 30, 32],
                     type: 'line',
-                    borderColor: ['##FFB800'],
-                    backgroundColor: ['##FFB800']
+                    borderColor: ['#00164f']
                 }]
             },
             options: {
@@ -101,7 +105,7 @@
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            
+
                         },
                         ticks: {
                             beginAtZero: true
@@ -123,8 +127,10 @@
         {
             type: 'bar',
             data: {
+                labels: ['1', '2', '3', '4' , '5', '6'],
                 datasets: [{
-                    label: 'Chave',
+                    label: 'Banco',
+                    data: [1, 0, 1, 0, 1, 0],
                     type: 'bar',
                     borderColor: ['#FFB800'],
                     backgroundColor: ['#FFB800']
