@@ -344,8 +344,9 @@ St {
     width: 70vh;
     height: 5vh;
     border-radius: 10px;
-    background-color: #cfcdcd;
-    opacity: 0.5;
+    background-color: #7390a3;
+    font-size: larger;
+    color: #ffffff;
 }
 
 .faleConosco #input_mensagemFaleConosco {
@@ -353,8 +354,9 @@ St {
     width: 70vh;
     height: 20vh;
     border-radius: 10px;
-    background-color: #cfcdcd;
-    opacity: 0.5;
+    background-color: #7390a3;
+    font-size: larger;
+    color: #ffffff;
 
 }
 
