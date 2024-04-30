@@ -37,16 +37,20 @@
         <div class="visao_dash">
             <div class="kpis">
                 <div id="1">
-                    <p>Média Temperatura do Dia</p>
-                </div>
-                <div id="2">
-                    <p>Média Temperatura da Semana</p>
+                    <p>Temperatura Mínima do dia</p>
+                    <span>18°C</span>
                 </div>
                 <div id="3">
-                    <p>Temperatura mais alta</p>
+                    <p>Temperatura máxima do dia </p>
+                    <span>29°C</span>
+                </div>
+                <div id="2">
+                    <p>Temperatura Média da semana</p>
+                    <span>30°C</span>
                 </div>
                 <div id="4">
-                    <p>Quantidade de Assentos Ocupados</p>
+                    <p>Bancos Ocupados</p><br>
+                    <span>8</span>
                 </div>
             </div>
 
@@ -54,13 +58,13 @@
 
                 <div class="canvas">
                     <div>
-                        <h1>Sensor Chave</h1>
+                        <h2>Bancos</h2>
                         <section>
                             <canvas id="chave"></canvas>
                         </section>
                     </div>
                     <div>
-                        <h1>Sensor LM 35 - Temperatura</h1>
+                        <h2>Temperatura</h2>
                         <section>
                             <canvas id="lm35Temperatura"></canvas>
                         </section>
@@ -83,14 +87,11 @@
         {
             type: 'line',
             data: {
-                labels: ['Leitura 1', 'Leitura 2', 'Leitura 3', 'Leitura 4', 'Leitura 5', 'Leitura 6'],
                 datasets: [{
-                    label: 'Sensor 1',
+                    label: 'Temperatura',
+                    data: [18, 20, 25, 29, 30, 32],
                     type: 'line',
-                    borderColor: ['#FFB800'],
-                    backgroundColor: ['#FFB800'],
-                    data: [30, 32, 31, 30, 31.5, 29.5],
-                    fill: false
+                    borderColor: ['#00164f']
                 }]
             },
             options: {
@@ -104,7 +105,7 @@
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            
+
                         },
                         ticks: {
                             beginAtZero: true
@@ -126,14 +127,13 @@
         {
             type: 'bar',
             data: {
-                labels: ['Lugar 1', 'Lugar 2', 'Lugar 3', 'Lugar 4', 'Lugar 5', 'Lugar 6', 'Lugar 7'],
+                labels: ['1', '2', '3', '4' , '5', '6'],
                 datasets: [{
-                    label: 'Lugares Ocupados',
+                    label: 'Banco',
+                    data: [1, 0, 1, 0, 1, 0],
                     type: 'bar',
                     borderColor: ['#FFB800'],
-                    backgroundColor: ['#FFB800'],
-                    data: [1, 0, 1, 1, 1, 0, 0],
-                    borderWidth: 1
+                    backgroundColor: ['#FFB800']
                 }]
             },
             options: {
@@ -159,5 +159,42 @@
             }
         }
     );
+
+    var paginacao = {};
+    var tempo = {};
+    function obterDados(grafico, endpoint) {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
+        http.send(null);
+        var valores = JSON.parse(http.responseText);
+        if (paginacao[endpoint] == null) {
+            paginacao[endpoint] = 0;
+        }
+        if (tempo[endpoint] == null) {
+            tempo[endpoint] = 0;
+        }
+        // Exibir à partir do último elemento exibido anteriormente
+        var ultimaPaginacao = paginacao[endpoint];
+        paginacao[endpoint] = valores.length;
+        var valores = valores.slice(ultimaPaginacao);
+        valores.forEach((valor) => {
+            //Máximo de 60 itens exibidos no gráfico
+            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+                grafico.data.labels.shift();
+                grafico.data.datasets[0].data.shift();
+            }
+
+            grafico.data.labels.push(tempo[endpoint]++);
+            grafico.data.datasets[0].data.push(parseFloat(valor));
+            grafico.update();
+        })
+    }
+
+    setInterval(() => {
+        obterDados(lm35Temperatura, 'lm35/temperatura');
+        obterDados(chave, 'chave');
+    }, 1000);
+
+
 
 </script>
