@@ -40,12 +40,18 @@
 }
 
 .menuLateral li {
-    margin-top: 5vh;
+    margin-top: 3vh;
     color: #ffff;
     font-size: larger;
     background-color: #0d308894;
     padding: 10px;
 
+}
+
+.menuLateral li:hover {
+    background-color: #ffb700c5;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 .menuLateral .opcao {
@@ -154,8 +160,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 250px;
     height: 200px;
 
 }
+
