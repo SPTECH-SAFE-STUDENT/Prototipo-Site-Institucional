@@ -25,6 +25,8 @@
     
 }
 
+
+/* Estilizando o Menu lateral da Dashboard */
 .menuLateral img {
     max-width: 10vw;
     margin: 5vh;
@@ -63,6 +65,8 @@
     margin-left: 1vw;
 }
 
+/* Estilizando as Kpis, os cards na parte de cima */
+
 .kpis {
     width: 100%;
     display:flex;
@@ -95,6 +99,8 @@
     font-size: 50px;
 }
 
+/* Estilizando os gráficos */
+
 .graficos{
     display: flex;
     width: 100%;
@@ -113,7 +119,7 @@
     color: #3c3c3d;
 }
 
-.canvas div{
+.canvas .container-temp{
     margin: 1vw;
     text-align: center;
     border: 2px solid #0116494d;
@@ -122,4 +128,34 @@
     width: auto;
 }
 
+.canvas .container-chave{
+    margin: 1vw;
+    text-align: center;
+    border: 2px solid #0116494d;
+    border-radius: 20px;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
 
+}
+
+.graficos-alinhamento{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.grafico_chave{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    height: 200px;
+
+}

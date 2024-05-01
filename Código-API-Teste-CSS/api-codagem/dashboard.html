@@ -127,7 +127,7 @@
         {
             type: 'bar',
             data: {
-                labels: ['1', '2', '3', '4' , '5', '6'],
+                labels: ['S-1', 'S-2', 'S-3', 'S-4' , 'S-5', 'S-6'],
                 datasets: [{
                     label: 'Banco',
                     data: [1, 0, 1, 0, 1, 0],
@@ -192,8 +192,11 @@
 
     setInterval(() => {
         obterDados(lm35Temperatura, 'lm35/temperatura');
-        obterDados(chave, 'chave');
     }, 1000);
+
+    setInterval(() => {
+        obterDados(chave, 'chave');
+    }, 2000);
 
 
 

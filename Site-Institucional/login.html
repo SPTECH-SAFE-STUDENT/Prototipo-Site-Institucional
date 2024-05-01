@@ -14,19 +14,19 @@
     </div>
     <div class="login-body">
         <div class="form-login">
-            <form action="./dashboard.html">
+            <form>
                 <h1>Login</h1>
                 <h3>Preencha os campos para <br> fazer login<h3>
 
                         <p>CPF ou E-mail</p>
-                        <input type="text" required>
+                        <input type="text" required id="input_login">
 
                         <p>Senha</p>
-                        <input type="password" required><br>
+                        <input type="password" required id="input_senha"><br>
 
                         <p style="margin-top: 5vh; font-size: large;">Ainda não tem cadastro? <a href="./cadastro.html"
                                 style="color: #FFB800; text-decoration: none;">Cadastre-se aqui</a></p>
-                        <button>Login</button>
+                        <button type="button" onclick="logar()">Login</button>
             </form>
         </div>
         <div class="img"><img src="./img/login.png" alt=""></div>
@@ -139,3 +139,27 @@
 </body>
 
 </html>
+
+
+
+
+<script>
+
+    function logar(){
+
+        const login = input_login.value
+        const senha = input_senha.value
+
+        if(login == 'safe@gmail.com' && senha == 'safe@123'){
+
+            window.location.href = "./dashboard.html"
+
+        }else{
+            alert('Usuário não encontrado!')
+
+        }
+
+    }
+
+
+</script>

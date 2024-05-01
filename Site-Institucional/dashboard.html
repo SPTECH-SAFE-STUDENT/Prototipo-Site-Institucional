@@ -50,20 +50,32 @@
                 </div>
                 <div id="4">
                     <p>Bancos Ocupados</p><br>
-                    <span>8</span>
+                    <span>12</span>
                 </div>
             </div>
 
             <div class="graficos">
 
                 <div class="canvas">
-                    <div>
+                    <div class="container-chave">
                         <h2>Bancos</h2>
-                        <section>
-                            <canvas id="chave"></canvas>
-                        </section>
+                        <div class="graficos-alinhamento">
+                            <section class="grafico_chave">
+                                <canvas id="chave"></canvas>
+                            </section>
+                            <section class="grafico_chave">
+                                <canvas id="chave2"></canvas>
+                            </section>
+                            <section class="grafico_chave">
+                                <canvas id="chave3"></canvas>
+                            </section>
+                            <section class="grafico_chave">
+                                <canvas id="chave4"></canvas>
+                            </section>
+
+                        </div>
                     </div>
-                    <div>
+                    <div class="container-temp">
                         <h2>Temperatura</h2>
                         <section>
                             <canvas id="lm35Temperatura"></canvas>
@@ -87,11 +99,14 @@
         {
             type: 'line',
             data: {
+                labels: [1, 2, 3, 4, 5, 6], 
                 datasets: [{
                     label: 'Temperatura',
                     data: [18, 20, 25, 29, 30, 32],
                     type: 'line',
-                    borderColor: ['#00164f']
+                    borderColor: ['#00164f'],
+                    backgroundColor: ['#00164f'],
+                    fill: false
                 }]
             },
             options: {
@@ -130,10 +145,10 @@
                 labels: ['1', '2', '3', '4' , '5', '6'],
                 datasets: [{
                     label: 'Banco',
-                    data: [1, 0, 1, 0, 1, 0],
+                    data: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
                     type: 'bar',
-                    borderColor: ['#FFB800'],
-                    backgroundColor: ['#FFB800']
+                    borderColor: '#FFB800',
+                    backgroundColor: '#FFB800'
                 }]
             },
             options: {
@@ -160,41 +175,125 @@
         }
     );
 
-    var paginacao = {};
-    var tempo = {};
-    function obterDados(grafico, endpoint) {
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
-        http.send(null);
-        var valores = JSON.parse(http.responseText);
-        if (paginacao[endpoint] == null) {
-            paginacao[endpoint] = 0;
-        }
-        if (tempo[endpoint] == null) {
-            tempo[endpoint] = 0;
-        }
-        // Exibir à partir do último elemento exibido anteriormente
-        var ultimaPaginacao = paginacao[endpoint];
-        paginacao[endpoint] = valores.length;
-        var valores = valores.slice(ultimaPaginacao);
-        valores.forEach((valor) => {
-            //Máximo de 60 itens exibidos no gráfico
-            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-                grafico.data.labels.shift();
-                grafico.data.datasets[0].data.shift();
+    var contextoChave = document.getElementById('chave2').getContext('2d');
+    contextoChave.canvas.width = 650;
+    contextoChave.canvas.height = 400;
+    var chave = new Chart(
+        contextoChave,
+        {
+            type: 'bar',
+            data: {
+                labels: ['1', '2', '3', '4' , '5', '6'],
+                datasets: [{
+                    label: 'Banco',
+                    data: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+                    type: 'bar',
+                    borderColor: '#FFB800',
+                    backgroundColor: '#FFB800'
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
             }
-
-            grafico.data.labels.push(tempo[endpoint]++);
-            grafico.data.datasets[0].data.push(parseFloat(valor));
-            grafico.update();
-        })
-    }
-
-    setInterval(() => {
-        obterDados(lm35Temperatura, 'lm35/temperatura');
-        obterDados(chave, 'chave');
-    }, 1000);
-
-
+        }
+    );
+    var contextoChave = document.getElementById('chave3').getContext('2d');
+    contextoChave.canvas.width = 650;
+    contextoChave.canvas.height = 400;
+    var chave = new Chart(
+        contextoChave,
+        {
+            type: 'bar',
+            data: {
+                labels: ['1', '2', '3', '4' , '5', '6'],
+                datasets: [{
+                    label: 'Banco',
+                    data: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+                    type: 'bar',
+                    borderColor: '#FFB800',
+                    backgroundColor: '#FFB800'
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+    var contextoChave = document.getElementById('chave4').getContext('2d');
+    contextoChave.canvas.width = 650;
+    contextoChave.canvas.height = 400;
+    var chave = new Chart(
+        contextoChave,
+        {
+            type: 'bar',
+            data: {
+                labels: ['1', '2', '3', '4' , '5', '6'],
+                datasets: [{
+                    label: 'Banco',
+                    data: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+                    type: 'bar',
+                    borderColor: '#FFB800',
+                    backgroundColor: '#FFB800'
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
 
 </script>
