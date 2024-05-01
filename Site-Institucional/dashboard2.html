@@ -50,15 +50,15 @@
                 </div>
                 <div id="3">
                     <p>Temperatura máxima do dia </p>
-                    <span>32°C</span>
+                    <span>27.5°C</span>
                 </div>
                 <div id="2">
                     <p>Temperatura Média da semana</p>
-                    <span>30°C</span>
+                    <span>25°C</span>
                 </div>
                 <div id="4">
                     <p>Bancos Ocupados</p><br>
-                    <span>12</span>
+                    <span>14</span>
                 </div>
             </div>
 
@@ -98,7 +98,7 @@
 </html>
 
 <script>
-    // Select JS 
+    // SELECT JS
     function dashboard1(){
         let selecionado = select_placa.value
 
@@ -117,20 +117,20 @@
         {
             type: 'line',
             data: {
-                labels: [1, 2, 3, 4, 5, 6], 
+                labels: [1, 2, 3, 4, 5, 6],
                 datasets: [{
                     label: 'Sensor 1',
                     borderColor: '#FFF348',
                     backgroundColor: '#000000',
                     fill: false,
-                    data: [30, 32, 31, 30, 31.5, 29.5]
+                    data: [20, 21, 22, 24, 23.5, 22.5]
                 },
                 {
                     label: 'Sensor 2',
                     borderColor: '#123456',
                     backgroundColor: '#FFFFFF',
                     fill: false,
-                    data: [20, 28, 26, 27, 26.5, 27.5]
+                    data: [22, 24, 25, 24, 26.5, 27.5]
                 }]
             },
             options: {
@@ -166,10 +166,10 @@
         {
             type: 'bar',
             data: {
-                labels: ['1', '2', '3', '4' , '5', '6'],
+                labels: ['1', '2', '3', '4', '5', '6'],
                 datasets: [{
                     label: 'Banco',
-                    data: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+                    data: [1, 1, 1, 1, 1, 1, 1],
                     type: 'bar',
                     borderColor: '#FFB800',
                     backgroundColor: '#FFB800'
@@ -207,10 +207,10 @@
         {
             type: 'bar',
             data: {
-                labels: ['1', '2', '3', '4' , '5', '6'],
+                labels: ['1', '2', '3', '4', '5', '6'],
                 datasets: [{
                     label: 'Banco',
-                    data: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+                    data: [0, 0, 0, 0, 1, 0],
                     type: 'bar',
                     borderColor: '#FFB800',
                     backgroundColor: '#FFB800'
@@ -247,10 +247,10 @@
         {
             type: 'bar',
             data: {
-                labels: ['1', '2', '3', '4' , '5', '6'],
+                labels: ['1', '2', '3', '4', '5', '6'],
                 datasets: [{
                     label: 'Banco',
-                    data: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+                    data: [1, 1, 1, 0, 1, 0],
                     type: 'bar',
                     borderColor: '#FFB800',
                     backgroundColor: '#FFB800'
@@ -287,10 +287,10 @@
         {
             type: 'bar',
             data: {
-                labels: ['1', '2', '3', '4' , '5', '6'],
+                labels: ['1', '2', '3', '4', '5', '6'],
                 datasets: [{
                     label: 'Banco',
-                    data: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+                    data: [1, 0, 0, 0, 1, 1],
                     type: 'bar',
                     borderColor: '#FFB800',
                     backgroundColor: '#FFB800'
