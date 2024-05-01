@@ -165,3 +165,58 @@
 
 }
 
+.SelectDiv {
+    height: 100px;
+    width: 1219px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20%;
+    color: #00164f;
+} 
+
+.selecoes {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.selecoes select {
+    cursor: pointer;
+    margin-top: 10px;
+    border-color: transparent;
+    outline: 0;
+    display: flex;
+    font-size: 20px;
+    padding-left: 300px;
+}
+
+.selecoes option {
+    background-color: #F0F0F0;
+}
+
+.selecoes button {
+    font-size: 20px;
+    border-radius: 20px;
+    height: 45px;
+    width: 400px;
+    margin-left: 150px;
+    border-color: transparent;
+    outline: 0;
+    cursor: pointer;
+    color: #00164f;
+}
+
+.selecoes button:hover {
+    background-color: #00164fc6;
+    color: white;
+    transition: all 0.2s;
+}
+
+.mensagemErro {
+    color: #e6a604;
+    margin-top: 25px;
+    margin-left: 100px;
+    font-size: 20px;
+}
