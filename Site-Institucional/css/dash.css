@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+.content {
+  display: flex;
+}
+
+.menuLateral {
+  display: inline;
+  background-color: #00164f;
+  max-width: 15vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.menuLateral img {
+  max-width: 10vw;
+  margin: 5vh;
+  background-color: #0d308894;
+  border-radius: 80%;
+}
+
+.menuLateral h1 {
+  color: #ffff;
+}
+
+.menuLateral li {
+  margin-top: 3vh;
+  color: #ffff;
+  font-size: larger;
+  background-color: #0d308894;
+  padding: 10px;
+}
+
+.menuLateral li:hover {
+  background-color: #ffb700c5;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.menuLateral .opcao {
+  margin: 13vh 0;
+}
+
+.menuLateral a {
+  color: #ffff;
+  text-decoration: none;
+}
+
+.kpis {
+  width: 100%;
+  /* height: 50%; */
+  display: flex;
+  justify-content: center;
+  margin-left: -10vh;
+}
+
+.kpis div {
+  width: 17%;
+  height: 20%;
+  margin: 2vw;
+  border: 2px solid #0116494d;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.103);
+  text-align: center;
+}
+
+.kpis div p {
+  color: #00164f;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: small;
+}
+
+.kpis div span {
+  color: #00164f;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.kpis div p {
+  color: #00164f;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: small;
+}
+
+.kpis div span {
+  color: #00164f;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#legenda {
+  border: none;
+  box-shadow: none;
+  margin-top: -1vh;
+  margin-left: -3vh;
+  height: 17vh;
+}
+
+.critico {
+  background-color: red;
+}
+.ideal {
+  background-color: green;
+}
+.abaixo {
+  background-color: rgb(255, 136, 0);
+}
+
+.text_legenda {
+  margin-right: -43vh;
+  margin-top: 0vh;
+  font-size: small;
+}
+
+.texto_alerta {
+  margin-left: -190vh;
+  margin-top: 3vh;
+  text-align: right;
+}
+
+.status_geral {
+  display: flex;
+  margin-top: 40vh;
+}
