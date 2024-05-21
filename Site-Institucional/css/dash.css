@@ -44,7 +44,7 @@
 }
 
 .menuLateral .opcao {
-  margin: 13vh 0;
+  margin: 10vh 0;
 }
 
 .menuLateral a {
@@ -63,9 +63,9 @@
 }
 
 .kpis div {
-  width: 17%;
+  width: 20%;
   height: 20vh;
-  margin: 1.5vw;
+  margin-top: 1vw;
   border: 2px solid #0116494d;
   border-radius: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.103);
@@ -75,8 +75,8 @@
 .kpis div p {
   color: #00164f;
   font-weight: bold;
-  font-size: small;
-  margin-top: 2vh;
+  font-size: large;
+  margin: 2vh;
   margin-bottom: 3vh;
 }
 
@@ -84,18 +84,16 @@
   color: #00164f;
   font-weight: bold;
   font-size: 30px;
-  margin: 5vh;
 }
 
 
 .kpis #legenda {
   border: none;
   box-shadow: none;
+  display: flex;
+  flex-direction: column;
 }
 
-#legenda div{
-  height: 4vh;
-}
 
 .critico {
   background-color: red;
@@ -108,38 +106,124 @@
 }
 
 .text_legenda {
-  margin-left: 5vh;
+  margin-left: 10vh;
   width: 18vw;
-  font-size: small;
+  font-size: medium;
   text-align: left;
 }
 
+
 .status_geral {
   margin-top: 30vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
-  justify-content: left;
+  flex-direction: column;
+
+}
+
+.status_geral h2{
+  color: #292929;
+  margin-bottom: 5vh;
   margin-left: 5vw;
+}
+
+
+
+ .status_geral .lista{
+  width: 50vw;
+  height: auto;
+  margin-left: 5vw;
+  border-radius: 20px;
+  background-color: #dbdbdb;
+  display: flex;
+  justify-content: center;
+}
+
+.status_geral span{
+  color: #474545;
+  font-size: 26px;
+  text-align: center;
+  
+}
+
+.metricas{
+  display: flex;
+  width: 30vw;
+  margin-top: 40vh;
+  font-size: large;
+  justify-content: right;
+  flex-direction: column;
+  
+}
+
+.metricas div{
+  margin-bottom: 5vh;
+  border-radius: 20px;
+  border: 2px solid #00164f;
+  padding: 10px 20px;
+  
+}
+
+.lista_metrica{
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+}
+
+.van{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8vw;
+  height: auto;
+}
+
+.van img{
+  height: 20vh;
+}
+
+.van a{
+  padding: 10px 60px;
+  color: #ffff;
+  background-color: #920707;
+  font-size: large;
+  border-radius: 20px;
+  text-decoration: none;
+}
+/* .campos{
+  display: flex;
+  justify-content: space-around;
+}
+
+.pesquisa{
+  display: flex;
   flex-direction: column;
 }
 
-.status_geral h1{
-  color: #292929;
-  margin-bottom: 5vh;
+.pesquisa span{
+  text-align: left;
+  margin-bottom: 2vh;
 }
 
- .status_geral div{
-  width: 70vw;
-  height: 10vh;
+.pesquisa input{
+  padding: 15px 100px;
+  font-size: large;
+  border: none;
+  text-align: left;
+}
+
+.pesquisaPlaca{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #887d7d;
   border-radius: 20px;
-  background-color: #dbdbdb;
+  padding: 5px ;
+  justify-content: center;
+  align-items: center;
 }
 
-.status_geral p{
-  color: #292929;
-  font-size: larger;
-  font-weight: bold;
-  text-align: center;
-  margin-right: 10vw;
-  margin-top: 10vh;
-}
+.pesquisaPlaca img{
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
+} */

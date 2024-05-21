@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/Site-Institucional/css/dash.css" />
-  </head>
 
-  <body>
-    <div class="content">
-      <div class="menuLateral">
-        <img src="./img/logo_SS.png" />
-        <div>
-          <h1>Bem vindo<br />de volta!</h1>
-        </div>
-        <div class="opcao">
-          <ul>
-            <li>Principal</li>
-            <li>Perfil</li>
-            <li><a href="./index.html">Sair</a></li>
-          </ul>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/Site-Institucional/css/dash.css" />
+</head>
+
+<body>
+  <div class="content">
+    <div class="menuLateral">
+      <img src="./img/logo_SS.png" />
+      <div>
+        <h1>Bem vindo<br />de volta!</h1>
       </div>
-      <div class="kpis">
-        <div class="teste" id="1">
-          <p>Vans em serviço</p>
-          <span>10/18</span>
-        </div>
-        <div id="2">
-          <p>Vans em estado crítico</p>
-          <span>2</span>
-        </div>
-        <div id="3">
-          <p>Total de alertas <br> do dia</p>
-          <span>8</span>
-        </div>
-        <div id="legenda">
-          <div class="ideal">
-            <h1 class="text_legenda">Temperatura abaixo da média</h1>
-          </div>
-          <div class="media">
-            <h1 class="text_legenda">Temperatura na média</h1>
-          </div>
-          <div class="critico">
-            <h1 class="text_legenda" >Temperatura acima da média</h1>
-          </div>
-        </div>
-      </div>
-      <div class="status_geral">
-        <h1>Status geral</h1>
-        <div ></div>
-        <p>Bem vindo! <br> A situação esta estável no momento.</p>
+      <div class="opcao">
+        <ul>
+          <li>Principal</li>
+          <li>Perfil</li>
+          <li><a href="./index.html">Sair</a></li><br><br>
+          <li>Suporte</li>
+        </ul>
       </div>
     </div>
-  </body>
+    <div class="kpis">
+      <div id="1">
+        <p>Vans em serviço</p>
+        <span>10/18</span>
+      </div>
+      <div id="2">
+        <p>Vans em estado crítico</p>
+        <span>2</span>
+      </div>
+      <div id="3">
+        <p>Alertas do dia</p>
+        <span>8</span>
+      </div>
+      <div id="legenda">
+        <div class="ideal">
+          <h1 class="text_legenda">Temperatura abaixo da média</h1>
+        </div>
+        <div class="media">
+          <h1 class="text_legenda">Temperatura na média</h1>
+        </div>
+        <div class="critico">
+          <h1 class="text_legenda">Temperatura acima da média</h1>
+        </div>
+      </div>
+    </div>
+    <div class="lista_metrica">
+      <div class="status_geral">
+        <h2>Status geral: <span> A situação esta estável no momento<span></h2>
+        <div class="lista">
+          <div class="van">
+            <img src="./img/van.png" alt="">
+            <span>Placa: ACD54Y</span>
+            <a href="dashboard2.html">IR</a>
+          </div>
+        </div>
+        <!-- <div class="campos">
+            <div class="pesquisa">
+              <span> Pesquisa por placas:</span>
+              <div class="pesquisaPlaca">
+                <input type="text" ><img src="./img/lupa.png" alt="">
+              </div>
+            </div>
+          </div> -->
+      </div>
+      <div class="metricas">
+        <div class="servico">
+          <span><b>Vans em serviço: </b><br>
+             Vans que estão trabalhando no momento
+          </span>
+        </div>
+        <div class="estado">
+          <span><b>Estado crítico: </b><br>
+             Vans com alertas contantes ou erros gravesno sistema
+          </span>
+        </div>
+        <div class="alerta">
+          <span><b>Alertas do dia: </b><br>
+             Quantidade de alertas no dia atual
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
